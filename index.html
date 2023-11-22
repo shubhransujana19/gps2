@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Tracking System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="container">
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+    <label class="custom-control-label" for="darkModeSwitch">Dark Mode</label>
+  </div>
+
+
+  <div class="controls" id="controls">
+    <label for="username">Username/ID:</label>
+    <input type="text" id="username" class="form-control">
+
+    <button id="startButton" class="btn btn-success" onclick="startTracking()">Start</button>
+    <button id="stopButton" class="btn btn-danger" onclick="stopTracking()">Stop</button>
+
+    <p id="currentLocation" class="info">Current Location: <span id="locationInfo"></span></p>
+    <p id="distance" class="info">Distance (km): <span id="distanceInfo"></span></p>
+    
+    <div class="status-container">
+        <p id="trackingStatus" class="info">
+          Tracking Status: <span id="statusInfo"></span>
+          <div class="light-status green-light" id="trackingLight"></div>
+        </p>
+      
+        <p id="internetStatus" class="info">
+          Internet Status: <span id="internetInfo"></span>
+          <div class="light-status red-light" id="internetLight"></div>
+        </p>
+      </div>
+          
+    </div>
+  <div class="map-container" id="map"></div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFzlw87Pf_trlsQjEjUu-4eP9G7WpcLDc&libraries=places&callback=initMap" async defer></script>
+<script src="app.js"></script>
+
+</body>
+</html>
